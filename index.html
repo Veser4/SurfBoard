@@ -11,34 +11,31 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-background"></div>
         <div class="header-slider">
-            <div class="slider-points">
-                <div class="slider-points__point"><div class="slider-points__circle active"></div></div>
-                <div class="slider-points__point"><div class="slider-points__circle"></div></div>
-                <div class="slider-points__point"><div class="slider-points__circle"></div></div>
-            </div>
-            <div class="header-slider__track">
-                <img src="images/slider-image1.jpeg" alt="image" class="header-slider__item active">
-                <img src="images/slider-image2.jpeg" alt="image" class="header-slider__item">
-                <img src="images/slider-image3.jpeg" alt="image" class="header-slider__item">
-            </div>
+            <img src="images/slider-image1.jpeg" alt="slider-background1" class="header-slider__background active">
+            <img src="images/slider-image2.jpeg" alt="slider-background2" class="header-slider__background">
+            <img src="images/slider-image3.jpeg" alt="slider-background3" class="header-slider__background">
         </div>
-        <div class="menu-row">
-            <a href="#" title="Surf Board"><img src="images/logotype.svg" alt="Surf Board" class="header__logotype"></a>
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item"><a href="#" class="navigation__link" title="О нас">О нас</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link" title="Серфборды">Серфборды</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link" title="Команда">Команда</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link" title="Меню">Меню</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link" title="Отзывы">Отзывы</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link" title="Как мы работаем">Как мы работаем</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link" title="Контакты ">Контакты </a></li>
+        <div class="header-slider-points">
+            <div class="header-slider__point"><div class="header-slider__circle active"></div></div>
+            <div class="header-slider__point"><div class="header-slider__circle"></div></div>
+            <div class="header-slider__point"><div class="header-slider__circle"></div></div>
+        </div>
+        <div class="header-menu">
+            <img src="images/logotype.svg" alt="Surfboard" class="header__logotype">
+            <nav class="menu-row">
+                <ul class="menu-list">
+                    <li><a href="#" class="menu-list__link" title="О нас">О нас</a></li>
+                    <li><a href="#" class="menu-list__link" title="Серфборды">Серфборды</a></li>
+                    <li><a href="#" class="menu-list__link" title="Команда">Команда</a></li>
+                    <li><a href="#" class="menu-list__link" title="Меню">Меню</a></li>
+                    <li><a href="#" class="menu-list__link" title="Отзывы">Отзывы</a></li>
+                    <li><a href="#" class="menu-list__link" title="Как мы работаем">Как мы работаем</a></li>
+                    <li><a href="#" class="menu-list__link" title="Контакты ">Контакты </a></li>
                 </ul>
             </nav>
-            <span class="number-block">
-                <img src="/images/white-phone.png" alt="phone" class="number-block__phone-img">8 800 903 90 90
+            <span class="header-contact">
+                <img src="images/white-phone.png" alt="📞" class="header-contact__phone-img">8 800 903 90 90
             </span>
             <div class="burger">
                 <div class="burger__image"></div>
@@ -56,13 +53,22 @@
             </div>
         </div>
         <div class="header-content">
-            <h1 class="header__title">Профессиональные <br class="header-content__br"> доски для <br class="header-content__br"> серфинга</h1>
-            <p class="header__description">Самый большой выбор серфбордов в мире</p>
-            <a href="#" class="header__button">ЗАКАЗАТЬ</a>
-            <div class="advantages">
-                <div class="advantages__item"><img src="images/white-board.png" alt="Board" class="advantages__image"><p>Уникальный дизайн</p></div>
-                <div class="advantages__item"><img src="images/white-material.png" alt="Material" class="advantages__image"><p>Прочные материалы</p></div>
-                <div class="advantages__item"><img src="images/white-delivery.png" alt="Delivery" class="advantages__image"><p>Быстрая доставка</p></div>
+            <h1 class="header__title">Профессиональные<br class="header-title__enter"> доски для<br class="header-title__enter"> серфинга</h1>
+            <h3 class="header__subtitle">Самый большой выбор серфбордов в мире</h3>
+            <a href="#" class="header__button" title="ЗАКАЗАТЬ">ЗАКАЗАТЬ</a>
+            <div class="header-advantages-row">
+                <div class="header-advantage-item">
+                    <img src="images/white-board.png" alt="board" class="header-advantage__image">
+                    <p class="header-advantage__text">Уникальный дизайн</p>
+                </div>
+                <div class="header-advantage-item">
+                    <img src="images/white-material.png" alt="material" class="header-advantage__image">
+                    <p class="header-advantage__text">Прочные материалы</p>
+                </div>
+                <div class="header-advantage-item">
+                    <img src="images/white-delivery.png" alt="delivery" class="header-advantage__image">
+                    <p class="header-advantage__text">Быстрая доставка</p>
+                </div>
             </div>
         </div>
     </header>

@@ -1,6 +1,3 @@
-let slider_items = [...document.querySelectorAll('.header-slider__item')];
-let slider_circles = [...document.querySelectorAll('.slider-points__circle')];
-let slider_points = [...document.querySelectorAll('.slider-points__point')];
 let slider_shop = document.querySelector('.shop-slider-content');
 let slider_button_next = document.querySelector('.slider-buttons-container__button-next');
 let slider_button_back = document.querySelector('.slider-buttons-container__button-back');
@@ -20,8 +17,7 @@ let review_buttons = [...document.querySelectorAll('.review-buttons__button')];
 let review_track = document.querySelector('.reviews-slider-track');
 let review_posts = [...document.querySelectorAll('.review-track-item')];
 
-let Hindex = 0;
-let Hcurrent = 0;
+let HIndex = 0;
 let index = 0;
 let current = 0;
 let direction = -1;
@@ -32,28 +28,6 @@ let lastReviewerIndex = 0;
 let headerTimerId;
 let shopTimerId;
 
-
-console.log(menu_blocks)
-
-var headerSliderNav = function(manual) {
-    slider_circles.forEach((btn) => {
-        btn.classList.remove('active');
-    });
-    slider_items.forEach((slide => {
-        slide.classList.remove('active');
-    }));
-    slider_circles[manual].classList.add("active");
-    slider_items[manual].classList.add("active");
-    Hcurrent = manual;
-    Hindex = manual;
-}
-slider_points.forEach((btn, i) => {
-    btn.addEventListener("click", () => {
-        headerSliderNav(i);
-        clearInterval(headerTimerId);
-        headerTimerId = setInterval(() => headerSliderShow(), 5000);
-    })
-})
 
 slider_button_back.addEventListener("click", () => {
     if (index != 0) {
@@ -70,18 +44,6 @@ slider_button_next.addEventListener("click", () => {
         shopSliderShow();
     }
 })
-
-function headerSliderShow() {
-    slider_items[Hcurrent].classList.remove('active')
-    slider_circles[Hcurrent].classList.remove('active')
-    Hindex += 1
-    if (Hindex == slider_items.length) {
-        Hindex = 0
-    }
-    Hcurrent = Hindex
-    slider_items[Hindex].classList.add('active')
-    slider_circles[Hindex].classList.add('active')
-}
 
 function shopSliderShow() {
     hideFeatures();
@@ -168,10 +130,40 @@ burger_button.addEventListener("click", () => {
         burger_content.classList.remove('activeBurger')
         burger_button.classList.remove('activeButtonBurger')
     }
-})
+});
 
+[...document.querySelectorAll('.header-slider__point')].forEach((point, i)  => {
+    point.addEventListener("click", () => {
+        [...document.querySelectorAll('.header-slider__circle')].forEach(circle => {
+            circle.classList.remove('active');
+        });
+        [...document.querySelectorAll('.header-slider__circle')][i].classList.add('active');
+        [...document.querySelectorAll('.header-slider__background')].forEach(img => {
+            img.classList.remove('active');
+        });
+        [...document.querySelectorAll('.header-slider__background')][i].classList.add('active');
+        HIndex = i
+        clearInterval(headerTimerId);
+        headerTimerId = setInterval(() => headerSliderShow(), 6000);
+    })
+});
 
+function headerSliderShow() {
+    [...document.querySelectorAll('.header-slider__background')].forEach(img => {
+        img.classList.remove('active');
+    });
+    [...document.querySelectorAll('.header-slider__circle')].forEach(circle => {
+        circle.classList.remove('active');
+    });
+    HIndex += 1;
+    if (HIndex == [...document.querySelectorAll('.header-slider__background')].length) {
+        HIndex = 0;
+    }
+    [...document.querySelectorAll('.header-slider__background')][HIndex].classList.add('active');
+    [...document.querySelectorAll('.header-slider__circle')][HIndex].classList.add('active')
+}
+
+headerTimerId = setInterval(() => headerSliderShow(), 6000);
 
 
 shopTimerId = setInterval(() => shopSliderShow(), 10000);
-headerTimerId = setInterval(() => headerSliderShow(), 5000);
